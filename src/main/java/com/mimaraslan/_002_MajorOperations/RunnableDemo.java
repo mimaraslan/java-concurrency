@@ -1,4 +1,4 @@
-package com.mimaraslan._002_;
+package com.mimaraslan._002_MajorOperations;
 
 public class RunnableDemo implements Runnable {
 
@@ -54,15 +54,14 @@ public class RunnableDemo implements Runnable {
     }
 
     public static void main(String[] args) {
-        RunnableDemo obj1 = new RunnableDemo("ThreadA\t");
+        RunnableDemo obj1 = new RunnableDemo("A\t");
         obj1.start();
 
-        RunnableDemo obj2 = new RunnableDemo("ThreadB\t");
+        RunnableDemo obj2 = new RunnableDemo("B\t");
         obj2.start();
 
-
         try{
-           // Thread.sleep(1000);
+            Thread.sleep(1000);
             obj1.suspend();
             System.out.println("Suspending thread A");
 
