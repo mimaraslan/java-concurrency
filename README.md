@@ -1,3 +1,3 @@
-# Java Concurrency
+# Java Concurrency and Multithreading
 
-Java multi-threaded programming
+Java Concurrency and Multi-threading
