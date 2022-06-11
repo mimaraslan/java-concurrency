@@ -1,11 +1,11 @@
 package com.mimaraslan._001_implements_runnable;
 
-public class RunnableDemo implements Runnable {
+public class AppMain implements Runnable {
 
     private Thread myThread;
     private String myThreadName;
 
-    public RunnableDemo(String myThreadName) {
+    public AppMain(String myThreadName) {
         this.myThreadName = myThreadName;
         System.out.println("Creating " + myThreadName);
     }
@@ -36,10 +36,10 @@ public class RunnableDemo implements Runnable {
     }
 
     public static void main(String[] args) {
-        RunnableDemo obj1 = new RunnableDemo("A\t");
+        AppMain obj1 = new AppMain("A\t");
         obj1.start();
 
-        RunnableDemo obj2 = new RunnableDemo("B\t");
+        AppMain obj2 = new AppMain("B\t");
         obj2.start();
     }
 
