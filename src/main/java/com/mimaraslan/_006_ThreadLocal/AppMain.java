@@ -1,10 +1,10 @@
 package com.mimaraslan._006_ThreadLocal;
 
 class RunnableDemo implements Runnable {
-    
     int counter;
     ThreadLocal<Integer> threadLocalCounter = new ThreadLocal<Integer>();
 
+    @Override
     public void run() {
         counter++;
 
@@ -18,13 +18,13 @@ class RunnableDemo implements Runnable {
     }
 }
 
-public class TestThread {
+public class AppMain {
     public static void main(String args[]) {
         RunnableDemo obj1 = new RunnableDemo();
-        Thread t1 = new Thread(obj1);
-        Thread t2 = new Thread(obj1);
-        Thread t3 = new Thread(obj1);
-        Thread t4 = new Thread(obj1);
+        Thread t1 = new Thread(obj1,"A");
+        Thread t2 = new Thread(obj1,"B");
+        Thread t3 = new Thread(obj1,"C");
+        Thread t4 = new Thread(obj1,"D");
 
         t1.start();
         t2.start();
@@ -42,4 +42,3 @@ public class TestThread {
         }
     }
 }
-

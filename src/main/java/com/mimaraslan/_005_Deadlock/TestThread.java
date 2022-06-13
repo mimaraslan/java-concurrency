@@ -18,33 +18,37 @@ public class TestThread {
 
                 try {
                     Thread.sleep(2000);
+                    System.out.println("Thread1: try lock 1");
                 } catch (InterruptedException e) {
-
+                    System.out.println("Thread1: catch lock 1: "+e);
                 }
-                System.out.println("Thread1: Waiting for lock 2");
 
+                System.out.println("Thread1: Waiting for lock 2");
                 synchronized (Lock2) {
                     System.out.println("Thread1: Holding lock 1 & 2");
                 }
+
             }
         }
     }
 
     private static class ThreadDemo2 extends Thread {
         public void run() {
-            synchronized (Lock2) {
+            synchronized (Lock1) {
                 System.out.println("Thread2: Holding lock 2");
 
                 try {
                     Thread.sleep(2000);
+                    System.out.println("Thread2: try lock 2");
                 } catch (InterruptedException e) {
-
+                    System.out.println("Thread2: catch lock 2: "+e);
                 }
-                System.out.println("Thread2: Waiting for lock 1");
 
-                synchronized (Lock1) {
+                System.out.println("Thread2: Waiting for lock 1");
+                synchronized (Lock2) {
                     System.out.println("Thread2: Holding lock 1 & 2");
                 }
+
             }
         }
     }
